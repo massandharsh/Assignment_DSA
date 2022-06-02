@@ -1,3 +1,5 @@
+package question;
+
 import java.util.Scanner;
 
 public class Stream {
@@ -5,12 +7,17 @@ public class Stream {
     public static int indexOf(int[]arr,int find){
         int upper_bound = -1;
         int lower_bound = -1;
-        for(int i = 1 ; i < MAXI ; i = i * 2){
+        int n = arr.length;
+        for(int i = 1 ; i < n ; i = i * 2){
             if(arr[i] > find){
                    upper_bound = i;
                    lower_bound = i/2;
                    break;
             }
+        }
+        if(upper_bound == -1){ //If outside the range
+            upper_bound = n-1;
+            lower_bound = upper_bound/2;
         }
         int low = lower_bound;
         int high = upper_bound;
