@@ -1,3 +1,5 @@
+package question;
+
 import java.util.*;
 public class Ropes {
     public static long findMinSingleRope(int[]arr,int n){
